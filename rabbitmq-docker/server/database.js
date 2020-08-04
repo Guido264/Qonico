@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
 
-const URI = 'mongodb://localhost/data-packages';
+const URI = 'mongodb://mongo/data-packages';
 
-mongoose.connect(URI)
-    .then(db => console.log('DB is connected'))
+mongoose.connect(URI, { 
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+ })
+    .then(db => console.log('DB is connected to', db.connection.host))
     .catch(err => console.error(err));
 
-module.exports = mongoose;
+module.exports = mongoose;  
+
