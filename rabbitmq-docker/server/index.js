@@ -9,7 +9,7 @@ app.set('port', process.env.PORT || 3000)
 
 // Middlewares
 app.use(morgan('dev'));
-app.use(express.json());
+app.use(express.json()); 
 
 // Routes
 app.use('/api',require('./routes/messages.routes'));
