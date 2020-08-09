@@ -45,4 +45,12 @@ Para eliminar los datos de la coleccion:
 `db.nombredelacoleccion.drop()`
 
 
-NOTAS: Docker compose viene incluido en la instalacion de Windows por defecto. En linux hay que instalarlo aparte https://docs.docker.com/compose/install/ .
+NOTAS: Docker compose viene incluido en la instalacion de Windows por defecto. En linux hay que instalarlo aparte [https://docs.docker.com/compose/install/] .
+
+[https://medium.com/@kailashyogeshwar/rabbitmq-cluster-using-docker-compose-7397ea378d73]
+
+[https://hometechhacker.com/how-to-create-a-graylog-container-in-docker/#Step_1_Install_Docker_Compose]
+
+[https://www.elastic.co/guide/en/elasticsearch/reference/6.6/docker.html]
+
+[https://hub.docker.com/r/graylog2/server/]
