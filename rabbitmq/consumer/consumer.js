@@ -1,6 +1,9 @@
 const amqp = require('amqplib/callback_api');
-  const QONICO_URL = 'amqp://dev.qonico.com:5672/';
-  const opt = { credentials: require('amqplib').credentials.plain('qonico', 'qonico-dev-sfo2') };
+  // const QONICO_URL = 'amqp://dev.qonico.com:5672/';
+  // const opt = { credentials: require('amqplib').credentials.plain('qonico', 'qonico-dev-sfo2') };
+
+  const QONICO_URL = 'amqp://localhost:5672';
+  const opt = { credentials: require('amqplib').credentials.plain('admin', 'admin') };
 
   amqp.connect(QONICO_URL, opt, (connError, connection) => {
     if(connError) {
@@ -28,3 +31,5 @@ const amqp = require('amqplib/callback_api');
       )
     });
   });
+
+  console.log('el letra');

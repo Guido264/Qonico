@@ -6,7 +6,8 @@ const messageCtrl = require('../controllers/messages.controller');
 
 router.get('/status', messageCtrl.getStatus );
 router.get('/messages', messageCtrl.getMessages );
-router.post('/', messageCtrl.sendMessages);
+router.post('/rabbit', messageCtrl.sendMessagesToRabbit);
+router.post('/mongo', messageCtrl.sendMessagesToMongo);
 
 
 module.exports = router;

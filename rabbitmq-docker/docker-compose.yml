@@ -18,3 +18,38 @@ services:
             - "27018:27017"
         logging: 
             driver: none
+    rabbit1:
+        container_name: rabbitapp
+        image: rabbitmq:3-management-alpine
+        hostname: rabbit
+        ports:
+            - "5672:5672"
+            - "15672:15672"
+        environment:
+            - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER:-admin}
+            - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS:-admin}
+    consumer:
+        container_name: consumer
+        build:  .
+        depends_on: 
+            - rabbit1
+    elasticsearch1:
+        container_name: elasticsearchapp
+        image: "elasticsearch:2"
+        command: "elasticsearch -Des.cluster.name='graylog'"
+    graylog:
+        container_name: graylogapp
+        image: graylog2/server:2.1.1-1
+        environment:
+            # GRAYLOG_PASSWORD_SECRET: elletra
+            # GRAYLOG_ROOT_PASSWORD_SHA2: 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
+            GRAYLOG_WEB_ENDPOINT_URI: http://127.0.0.1:9000/api
+        links:
+            - mongo:mongo
+            - elasticsearch1:elasticsearch
+        ports:
+            - "9000:9000"
+            
+            
+    
+   

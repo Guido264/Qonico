@@ -16,6 +16,10 @@ En el container que tiene la imagen mongo buscar la columna NAMES y ejecutar:
 
 `docker exec -it (nombre) bash`
 
+Para borrar todas las imagenes de docker:
+
+` docker rmi $(docker images -q) -f`
+
 Para conectarse a la instancia de mongo creada con docker-compose ejecutar:
 
 `mongo --port 27017` (no es necesario si el puerto es por defecto)
@@ -39,5 +43,6 @@ Para ver contenido en la coleccion:
 Para eliminar los datos de la coleccion:
 
 `db.nombredelacoleccion.drop()`
+
 
 NOTAS: Docker compose viene incluido en la instalacion de Windows por defecto. En linux hay que instalarlo aparte https://docs.docker.com/compose/install/ .
