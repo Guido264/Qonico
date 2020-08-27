@@ -54,3 +54,5 @@ NOTAS: Docker compose viene incluido en la instalacion de Windows por defecto. E
 [https://www.elastic.co/guide/en/elasticsearch/reference/6.6/docker.html]
 
 [https://hub.docker.com/r/graylog2/server/]
+
+[https://blogs.sap.com/2016/06/29/demo-on-configuring-graylog-input-and-get-messages-2/]
